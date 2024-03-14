@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+"use client"
+import React, { FC } from "react";
 import { ComposableMap, ZoomableGroup, Geographies, Geography } from "react-simple-maps";
 import { Tooltip } from 'react-tooltip';
-
 import styles from "./mapChart.module.scss";
 
-const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
-export default function MapChart() {
+const MapChart: FC = () => {
+  const geoUrl = process.env.NEXT_PUBLIC_DATA_URL;
+
   return (
     <div>
-      <Tooltip id="country_name" place="top-end" />
-      <ComposableMap className={styles.mapContainer}>
+      <Tooltip  style={{ backgroundColor: "#b72f34", color: "#fff" }} id="country_name" place="top-end" />
+      <ComposableMap className={styles.mapContainer} projection="geoEqualEarth">
         <ZoomableGroup center={[0, 0]} zoom={1}>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
@@ -23,26 +24,25 @@ export default function MapChart() {
                     geography={geo}
                     style={{
                       default: {
-                        fill: "#EEE",
-                        stroke: "#fff",
+                        fill: "#DFDEDE",
+                        stroke: "#656462",
                         strokeWidth: 0.5,
                         outline: "none",
                       },
                       hover: {
-                        fill: "#F53",
-                        stroke: "#fff",
+                        fill: "#b72f34",
+                        stroke: "#656462",
                         strokeWidth: 0.5,
                         outline: "none",
                       },
                       pressed: {
-                        fill: "#E42",
-                        stroke: "#fff",
+                        fill: "#b72f34",
+                        stroke: "#656462",
                         strokeWidth: 0.5,
                         outline: "none",
                       },
                     }}
-                  >
-                  </Geography>
+                  />
                 );
               })
             }
@@ -51,4 +51,6 @@ export default function MapChart() {
       </ComposableMap>
     </div>
   );
-}
+};
+
+export default MapChart;

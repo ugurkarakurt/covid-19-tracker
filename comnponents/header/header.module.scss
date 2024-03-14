@@ -1,0 +1,24 @@
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: #111111;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0 50px;
+  .logoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .navbarWrapper {
+    flex: 1 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+}
