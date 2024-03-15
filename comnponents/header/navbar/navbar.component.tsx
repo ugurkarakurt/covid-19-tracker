@@ -7,7 +7,7 @@ function Navbar() {
     <nav className={styles.navbarContainer}>
       <ul>
         <li>
-          <Link href={"world-map"}>World Map</Link>
+          <Link href={"list"}>World Map</Link>
         </li>
       </ul>
     </nav>

@@ -14,7 +14,7 @@ const MapChart: FC = () => {
 
   return (
     <div>
-      <Tooltip style={{ backgroundColor: "#b72f34", color: "#fff" }} id="country_name" place="top-end" />
+      <Tooltip style={{ backgroundColor: "#fff", color: "#000", fontWeight: "bold" }} id="country_name" place="top-end" />
       <ComposableMap className={styles.mapContainer} projection="geoEqualEarth">
         <ZoomableGroup center={[0, 0]} zoom={1}>
           <Geographies geography={geoUrl}>
