@@ -6,12 +6,18 @@
   ul {
     li {
       list-style: none;
-      font-size: 14px;
-      background-color: #b72f34;
-      padding: 10px 20px;
-      text-transform: uppercase;
-      transition: 0.1s ease-in-out;
-      cursor: pointer;
+      a {
+        font-size: 14px;
+        background-color: #b72f34;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        transition: 0.1s ease-in-out;
+        cursor: pointer;
+        &:active {
+          position: relative;
+          top: 1px;
+        }
+      }
       &:hover {
         background-color: #d1363a;
       }
