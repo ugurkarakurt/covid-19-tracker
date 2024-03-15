@@ -1,20 +1,19 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import rootSaga from './sagas';
-import dataReducer from './reducers/dataReducer';
+import dataReducer from './reducers/dataSlice';
+import dataSaga from './sagas/dataSaga';
 
 const rootReducer = combineReducers({
   data: dataReducer,
+  // diğer reducer'lar buraya eklenebilir
 });
+
+export type RootState = ReturnType<typeof rootReducer>;
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = configureStore({
-  reducer: rootReducer,
-  middleware: [sagaMiddleware],
-});
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 
-sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(dataSaga);
 
-export type RootState = ReturnType<typeof rootReducer>;
 export default store;
