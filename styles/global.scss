@@ -27,11 +27,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1F1F1F;
+  background-color: #1f1f1f;
 }
 
 main {
-  width: 1000px;
-  height: 750px;
-  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
 }

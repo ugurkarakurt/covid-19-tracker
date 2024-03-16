@@ -1,0 +1,74 @@
+.homeContainer {
+  padding: 120px 0;
+  min-height: 900px;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  .homeTitle {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    h2 {
+      font-size: 24px;
+      color: #fff;
+    }
+    span {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  .earthImage {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+
+  .stats {
+    width: 100%;
+    .statsItems {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .statsItem {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        span {
+          color: rgba(255, 255, 255, 0.5);
+          text-align: center;
+          &:last-child {
+            font-weight: bold;
+          }
+        }
+        &:nth-child(1) {
+          span {
+            &:last-child {
+              color: #005a82;
+            }
+          }
+        }
+        &:nth-child(2) {
+          span {
+            &:last-child {
+              color: #b72f34;
+            }
+          }
+        }
+        &:nth-child(3) {
+          span {
+            &:last-child {
+              color: #139300;
+            }
+          }
+        }
+      }
+    }
+  }
+}
