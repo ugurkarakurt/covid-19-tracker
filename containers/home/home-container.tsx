@@ -1,16 +1,28 @@
 "use client"
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from "./home-container.module.scss";
 import Image from 'next/image';
 import EarthImage from "@/public/earth_white.svg";
 import Counter from '@/comnponents/counter/counter.component';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/redux/store';
+import { TotalData } from '@/types';
 
 function HomeContainer() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'FETCH_TOTAL_COVID_DATA' });
+  }, []);
+
+  const totalCovidData = useSelector<RootState, TotalData>((state) => state.totalCovidData);
+  const lastUpdated = totalCovidData.updated ? new Date(totalCovidData.updated) : "-";
+
   return (
     <div className={styles.homeContainer}>
       <div className={styles.homeTitle}>
         <h2>Global Stats</h2>
-        <span>Last Updated: 05.5.1203</span>
+        <span>{lastUpdated.toLocaleString()}</span>
       </div>
       <Image
         className={styles.earthImage}
@@ -23,15 +35,15 @@ function HomeContainer() {
         <ul className={styles.statsItems}>
           <li className={styles.statsItem}>
             <span className={styles.statsName}>Cases</span>
-            <Counter from={0} to={100} />
+            <Counter from={0} to={totalCovidData.cases} />
           </li>
           <li className={styles.statsItem}>
             <span className={styles.statsName}>Deaths</span>
-            <Counter from={0} to={100} />
+            <Counter from={0} to={totalCovidData.deaths} />
           </li>
           <li className={styles.statsItem}>
             <span className={styles.statsName}>Recovered</span>
-            <Counter from={0} to={100} />
+            <Counter from={0} to={totalCovidData.recovered} />
           </li>
         </ul>
       </div>

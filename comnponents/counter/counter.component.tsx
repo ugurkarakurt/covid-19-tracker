@@ -19,7 +19,7 @@ function Counter({ from, to }: CounterProps) {
         duration: 1,
         onUpdate(value) {
           if (node) {
-            node.textContent = value.toFixed(2);
+            node.textContent = value.toFixed(0);
           }
         }
       });
@@ -32,7 +32,7 @@ function Counter({ from, to }: CounterProps) {
     };
   }, [from, to]);
 
-  return <span ref={nodeRef}>-</span>;
+  return <span ref={nodeRef}>0</span>;
 }
 
 export default Counter;

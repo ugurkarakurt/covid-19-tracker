@@ -10,6 +10,10 @@
   justify-content: space-between;
   align-items: stretch;
   padding: 0 50px;
+  z-index: 99;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
   .logoWrapper {
     display: flex;
     justify-content: center;

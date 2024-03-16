@@ -1,11 +1,12 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import dataReducer from './reducers/dataSlice';
+import countriesCovidDataReducer from './reducers/countriesCovidDataSlice';
+import totalCovidDataReducer from './reducers/totalCovidDataSlice';
 import dataSaga from './sagas/dataSaga';
 
 const rootReducer = combineReducers({
-  data: dataReducer,
-  // diğer reducer'lar buraya eklenebilir
+  countriesCovidData: countriesCovidDataReducer,
+  totalCovidData: totalCovidDataReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

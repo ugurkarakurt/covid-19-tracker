@@ -1,13 +1,13 @@
 import { CountryData } from '@/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const initialState: { [country: string]: CountryData } = {};
+const initialState = {};
 
 const dataSlice = createSlice({
-  name: 'data',
+  name: 'countriesCovidData',
   initialState,
   reducers: {
-    setTotalCovidData(state, action: PayloadAction<{ [country: string]: CountryData }>) {
+    setCountriesCovidData(state, action: PayloadAction<{ [country: string]: CountryData }>) {
       return {
         ...state,
         ...action.payload,
@@ -16,5 +16,5 @@ const dataSlice = createSlice({
   },
 });
 
-export const { setTotalCovidData } = dataSlice.actions;
+export const { setCountriesCovidData } = dataSlice.actions;
 export default dataSlice.reducer;

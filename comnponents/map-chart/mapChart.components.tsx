@@ -10,7 +10,7 @@ import { getColorByCases } from "@/utils/pseudo.utils";
 
 const MapChart: FC = () => {
   const geoUrl = process.env.NEXT_PUBLIC_DATA_URL;
-  const totalCovidData = useSelector((state: RootState) => state.data);
+  const countriesCovidData = useSelector((state: RootState) => state.countriesCovidData);
 
   return (
     <div>
@@ -21,7 +21,7 @@ const MapChart: FC = () => {
             {({ geographies }) =>
               geographies.map((geo, i) => {
                 const countryCode = geo.properties.name;
-                const countryCases = totalCovidData[countryCode]?.cases || 0;
+                const countryCases = countriesCovidData[countryCode]?.cases || 0;
                 const fill = getColorByCases(countryCases);
 
                 return (

@@ -8,9 +8,8 @@ function ListContainer() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_TOTAL_COVID_DATA' });
+    dispatch({ type: 'FETCH_COUNTRIES_COVID_DATA' });
   }, []);
-
 
   return (
     <MapChart />
