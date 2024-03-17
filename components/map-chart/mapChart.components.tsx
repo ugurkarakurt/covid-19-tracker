@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { RootState } from '../../redux/store';
 import { ComposableMap, ZoomableGroup, Geographies, Geography } from "react-simple-maps";
 import { Tooltip } from 'react-tooltip';
@@ -9,7 +9,7 @@ import { CountryData } from "@/types/types";
 import Link from "next/link";
 import Topology from "@/data/topology.json";
 
-const MapChart: FC = () => {
+const MapChart: React.FC = () => {
   const geoUrl = Topology;
   const countriesCovidData: { [country: string]: CountryData } = useSelector((state: RootState) => state.countriesCovidData);
 
@@ -62,7 +62,6 @@ const MapChart: FC = () => {
           </Geographies>
         </ZoomableGroup>
       </ComposableMap>
-      <span>Data from <b>disease.sh</b></span>
     </div>
   );
 };

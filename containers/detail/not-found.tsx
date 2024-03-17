@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-function Country404() {
+const Country404: React.FC = () => {
   return (
     <div
       style={{

@@ -7,7 +7,7 @@ import LogoImage from "@/public/logo.svg";
 
 const syncopate = Syncopate({ subsets: ["latin"], weight: '400' });
 
-function Logo() {
+const Logo: React.FC = () => {
   return (
     <div className={styles.logoContainer}>
       <Link href={'/'}>
@@ -24,4 +24,4 @@ function Logo() {
   )
 }
 
-export default Logo
+export default Logo;

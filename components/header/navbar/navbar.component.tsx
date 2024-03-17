@@ -3,8 +3,7 @@ import styles from "./navbar.module.scss";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-function Navbar() {
-
+const Navbar: React.FC = () => {
   const pathname = usePathname()
 
   return (
@@ -18,4 +17,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar;

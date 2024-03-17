@@ -4,7 +4,7 @@ import Logo from './logo/logo.component';
 import Navbar from './navbar/navbar.component';
 import MovingComponent from '../moving-component/moving-component.component';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <MovingComponent initial={{ opacity: 0 }}>
@@ -12,7 +12,6 @@ const Header = () => {
           <Logo />
         </div>
       </MovingComponent>
-
       <div className={styles.navbarWrapper}>
         <MovingComponent initial={{ opacity: 0 }}>
           <Navbar />

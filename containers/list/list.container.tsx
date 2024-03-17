@@ -9,7 +9,7 @@ import MapLoading from './loading/loading';
 import { CountryData } from '@/types/types';
 import PageTitle from '@/components/page-title/page-title.component';
 
-function ListContainer() {
+const ListContainer: React.FC = () => {
   const dispatch = useDispatch();
   const countryCovidData = useSelector((state: RootState) => state.countryCovidData);
   const countriesCovidData: { [country: string]: CountryData } = useSelector((state: RootState) => state.countriesCovidData);

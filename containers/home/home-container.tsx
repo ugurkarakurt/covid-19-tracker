@@ -3,14 +3,13 @@ import React, { useEffect } from 'react';
 import styles from "./home-container.module.scss";
 import Image from 'next/image';
 import EarthImage from "@/public/earth_white.svg";
-import Counter from '@/components/counter/counter.component';
 import { useDispatch, useSelector } from 'react-redux';
 import PageTitle from '@/components/page-title/page-title.component';
 import { RootState } from '@/redux/store';
 import { TotalData } from '@/types/types';
-import MovingComponent from '@/components/moving-component/moving-component.component';
+import TotalInformation from '@/components/total-information/total-information.component';
 
-function HomeContainer() {
+const HomeContainer: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,28 +30,7 @@ function HomeContainer() {
         alt='site_logo'
         priority
       />
-      <div className={styles.stats}>
-        <ul className={styles.statsItems}>
-          <MovingComponent initial={{ opacity: 0 }}>
-            <li className={styles.cases}>
-              <span className={styles.statsName}>Cases</span>
-              <Counter from={0} to={totalCovidData.cases} />
-            </li>
-          </MovingComponent>
-          <MovingComponent initial={{ opacity: 0 }}>
-            <li className={styles.deaths}>
-              <span className={styles.statsName}>Deaths</span>
-              <Counter from={0} to={totalCovidData.deaths} />
-            </li>
-          </MovingComponent>
-          <MovingComponent initial={{ opacity: 0 }}>
-            <li className={styles.recovered}>
-              <span className={styles.statsName}>Recovered</span>
-              <Counter from={0} to={totalCovidData.recovered} />
-            </li>
-          </MovingComponent>
-        </ul>
-      </div>
+      <TotalInformation totalCovidData={totalCovidData} />
     </div>
   )
 }
