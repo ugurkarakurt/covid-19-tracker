@@ -27,11 +27,7 @@ const DetailContainer: React.FC<{ country: string }> = ({ country }) => {
 
   return (
     <>
-      <CountryDetailLoading />
-      {/* 
-      {!countryCovidData ? (
-        <CountryDetailLoading />
-      ) : (
+      {countryCovidData.cases > 0 ? (
         <div className={styles.detialContainer}>
           <PageTitle title={`${countryCovidData.country} / ${countryCovidData.continent}`} date={lastUpdated.toLocaleString()} />
           <div className={styles.mapContainer}>
@@ -58,7 +54,9 @@ const DetailContainer: React.FC<{ country: string }> = ({ country }) => {
             </ul>
           </div>
         </div>
-      )} */}
+      ) : (
+        <CountryDetailLoading />
+      )}
     </>
   );
 };

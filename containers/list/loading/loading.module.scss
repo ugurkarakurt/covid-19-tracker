@@ -1,0 +1,14 @@
+.mapLoading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mapSkeleton {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+  }
+}

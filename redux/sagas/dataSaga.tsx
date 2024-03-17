@@ -22,7 +22,7 @@ function* fetchCountriesCovidData() {
 function* fetchCountryCovidData(country: CountryParameterData) {
   try {
     const response: CountryData = yield call(get, `${process.env.NEXT_PUBLIC_API_URL}/countries/${country.payload}`);
-    yield put(setcountryCovidData({ ...response, message: response.message || "" }));
+    yield put(setcountryCovidData(response))
   } catch (error) {
     console.error('Veri alınırken hata oluştu:', error);
   }

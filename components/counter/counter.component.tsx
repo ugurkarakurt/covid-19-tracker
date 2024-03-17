@@ -1,34 +1,34 @@
 import { CounterProps } from "@/types/types";
-import { animate, AnimationControls } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import { animate, AnimationControls, AnimationPlaybackControls } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 
 function Counter({ from, to }: CounterProps) {
+  const [count, setCount] = useState<number>(from);
+  const [controls, setControls] = useState<AnimationPlaybackControls | undefined>(undefined);
   const nodeRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const node = nodeRef.current;
 
-    let count: AnimationControls | undefined;
-
     if (node) {
-      count = animate(from, to, {
+      const newControls = animate(from, to, {
         duration: 1,
         onUpdate(value) {
-          if (node) {
-            node.textContent = value.toFixed(0);
-          }
+          setCount(value);
         }
       });
+
+      setControls(newControls);
     }
 
     return () => {
-      if (count) {
-        count.stop();
+      if (controls) {
+        controls.stop();
       }
     };
   }, [from, to]);
 
-  return <span ref={nodeRef}>0</span>;
+  return <span ref={nodeRef}>{count.toFixed(0)}</span>;
 }
 
 export default Counter;

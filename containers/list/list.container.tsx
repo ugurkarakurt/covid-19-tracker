@@ -1,19 +1,40 @@
 "use client"
 import React, { useEffect } from 'react';
 import styles from "./list-container.module.scss";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import MapChart from '@/components/map-chart/mapChart.components';
+import { setcountryCovidData } from '@/redux/reducers/countryCovidDataSlice';
+import { RootState } from '@/redux/store';
+import MapLoading from './loading/loading';
+import { CountryData } from '@/types/types';
 
 function ListContainer() {
   const dispatch = useDispatch();
+  const countryCovidData = useSelector((state: RootState) => state.countryCovidData);
+  const countriesCovidData: { [country: string]: CountryData } = useSelector((state: RootState) => state.countriesCovidData);
+
+  console.log(countriesCovidData);
+
 
   useEffect(() => {
     dispatch({ type: 'FETCH_COUNTRIES_COVID_DATA' });
+    dispatch(setcountryCovidData({
+      ...countryCovidData,
+      cases: 0,
+      message: ""
+    }));
   }, []);
 
+
   return (
+
     <div className={styles.listContainer}>
-      <MapChart />
+      {Object.keys(countriesCovidData).length > 0 ? (
+        <MapChart />
+
+      ) : (
+        <MapLoading />
+      )}
     </div>
   )
 }
