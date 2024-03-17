@@ -15,3 +15,7 @@ export const getColorByCases = (cases) => {
     return '#F5F4F6';
   }
 }
+
+export const numberWithDot = (number) => {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}

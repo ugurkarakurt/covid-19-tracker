@@ -8,6 +8,7 @@ import Country404 from './not-found';
 import CountryDetailLoading from './loading/loading';
 import dynamic from "next/dynamic";
 import PageTitle from '@/components/page-title/page-title.component';
+import { numberWithDot } from '@/utils/pseudo.utils';
 const LeafletMap = dynamic(() => import("@/components/leaflet-map/leaflet-map.component"), { ssr: false });
 
 const DetailContainer: React.FC<{ country: string }> = ({ country }) => {
@@ -15,7 +16,6 @@ const DetailContainer: React.FC<{ country: string }> = ({ country }) => {
   const dispatch = useDispatch();
   const countryCovidData = useSelector((state: RootState) => state.countryCovidData);
   const lastUpdated = countryCovidData.updated ? new Date(countryCovidData.updated) : "-";
-  console.log(countryCovidData);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_COUNTRY_COVID_DATA', payload: country });
@@ -39,18 +39,19 @@ const DetailContainer: React.FC<{ country: string }> = ({ country }) => {
                 className={styles.logo}
                 src={countryCovidData.countryInfo.flag}
                 unoptimized
+                priority
                 width={100}
                 height={100}
                 alt='site_logo'
               />
             </div>
             <ul className={styles.countryInformation}>
-              <li>Population : {countryCovidData.population}</li>
-              <li>Cases : {countryCovidData.cases}</li>
-              <li>Active : {countryCovidData.active}</li>
-              <li>Recovered : {countryCovidData.recovered}</li>
-              <li>Deaths : {countryCovidData.deaths}</li>
-              <li>Tests : {countryCovidData.tests}</li>
+              <li>Population : {numberWithDot(countryCovidData.population)}</li>
+              <li>Cases : {numberWithDot(countryCovidData.cases)}</li>
+              <li>Active : {numberWithDot(countryCovidData.active)}</li>
+              <li>Recovered : {numberWithDot(countryCovidData.recovered)}</li>
+              <li>Deaths : {numberWithDot(countryCovidData.deaths)}</li>
+              <li>Tests : {numberWithDot(countryCovidData.tests)}</li>
             </ul>
           </div>
         </div>

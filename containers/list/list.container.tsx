@@ -7,14 +7,13 @@ import { setcountryCovidData } from '@/redux/reducers/countryCovidDataSlice';
 import { RootState } from '@/redux/store';
 import MapLoading from './loading/loading';
 import { CountryData } from '@/types/types';
+import PageTitle from '@/components/page-title/page-title.component';
 
 function ListContainer() {
   const dispatch = useDispatch();
   const countryCovidData = useSelector((state: RootState) => state.countryCovidData);
   const countriesCovidData: { [country: string]: CountryData } = useSelector((state: RootState) => state.countriesCovidData);
-
-  console.log(countriesCovidData);
-
+  const lastUpdated = Object.keys(countriesCovidData).length ? new Date(countriesCovidData["USA"].updated) : "-";
 
   useEffect(() => {
     dispatch({ type: 'FETCH_COUNTRIES_COVID_DATA' });
@@ -25,15 +24,18 @@ function ListContainer() {
     }));
   }, []);
 
+  console.log(countriesCovidData["USA"]);
+
 
   return (
-
     <div className={styles.listContainer}>
-      {Object.keys(countriesCovidData).length > 0 ? (
-        <MapChart />
-
-      ) : (
+      {!countriesCovidData["USA"] ? (
         <MapLoading />
+      ) : (
+        <>
+          <PageTitle title={"COVID-19 World Map"} date={lastUpdated.toLocaleString()} />
+          <MapChart />
+        </>
       )}
     </div>
   )

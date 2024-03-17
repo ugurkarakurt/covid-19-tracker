@@ -22,13 +22,13 @@ function HomeContainer() {
   return (
     <div className={styles.homeContainer}>
       <PageTitle title={"Global Stats"} date={lastUpdated.toLocaleString()} />
-
       <Image
         className={styles.logo}
         src={EarthImage}
         unoptimized
         style={{ width: '100%', height: 'auto' }}
         alt='site_logo'
+        priority
       />
       <div className={styles.stats}>
         <ul className={styles.statsItems}>
