@@ -15,7 +15,7 @@ function* fetchCountriesCovidData() {
 
     yield put(setCountriesCovidData(obj));
   } catch (error) {
-    console.error('Veri alınırken hata oluştu:', error);
+    console.error('Error receiving data:', error);
   }
 }
 
@@ -24,7 +24,7 @@ function* fetchCountryCovidData(country: CountryParameterData) {
     const response: CountryData = yield call(get, `${process.env.NEXT_PUBLIC_API_URL}/countries/${country.payload}`);
     yield put(setcountryCovidData(response))
   } catch (error) {
-    console.error('Veri alınırken hata oluştu:', error);
+    console.error('Error receiving data:', error);
   }
 }
 
@@ -33,7 +33,7 @@ function* fetchTotalCovidData() {
     const response: TotalData = yield call(get, `${process.env.NEXT_PUBLIC_API_URL}/all`);
     yield put(setTotalCovidData(response));
   } catch (error) {
-    console.error('Veri alınırken hata oluştu:', error);
+    console.error('Error receiving data:', error);
   }
 }
 

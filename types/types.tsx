@@ -84,8 +84,14 @@ export type RootLayoutProps = {
   children: React.ReactNode;
 }
 
-
 export type LeafletMapProps = {
   coord: [number, number];
   country: string,
 }
+
+
+
+export type MovingComponentProps = {
+  initial: { opacity: number };
+  children: React.ReactNode;
+};

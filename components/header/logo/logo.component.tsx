@@ -15,6 +15,7 @@ function Logo() {
           className={styles.logo}
           src={LogoImage}
           unoptimized
+          priority
           alt='site_logo'
         />
         <h1 className={syncopate.className}>Covid-19 Tracker</h1>

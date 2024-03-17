@@ -24,9 +24,6 @@ function ListContainer() {
     }));
   }, []);
 
-  console.log(countriesCovidData["USA"]);
-
-
   return (
     <div className={styles.listContainer}>
       {!countriesCovidData["USA"] ? (

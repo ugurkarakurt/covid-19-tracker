@@ -2,6 +2,12 @@
   width: 90%;
   height: auto;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 768px) {
+    justify-content: space-between;
+    flex: 1 1;
+  }
   span {
     color: #fff;
     font-size: 12px;

@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PageTitle from '@/components/page-title/page-title.component';
 import { RootState } from '@/redux/store';
 import { TotalData } from '@/types/types';
+import MovingComponent from '@/components/moving-component/moving-component.component';
 
 function HomeContainer() {
   const dispatch = useDispatch();
@@ -32,18 +33,24 @@ function HomeContainer() {
       />
       <div className={styles.stats}>
         <ul className={styles.statsItems}>
-          <li className={styles.statsItem}>
-            <span className={styles.statsName}>Cases</span>
-            <Counter from={0} to={totalCovidData.cases} />
-          </li>
-          <li className={styles.statsItem}>
-            <span className={styles.statsName}>Deaths</span>
-            <Counter from={0} to={totalCovidData.deaths} />
-          </li>
-          <li className={styles.statsItem}>
-            <span className={styles.statsName}>Recovered</span>
-            <Counter from={0} to={totalCovidData.recovered} />
-          </li>
+          <MovingComponent initial={{ opacity: 0 }}>
+            <li className={styles.cases}>
+              <span className={styles.statsName}>Cases</span>
+              <Counter from={0} to={totalCovidData.cases} />
+            </li>
+          </MovingComponent>
+          <MovingComponent initial={{ opacity: 0 }}>
+            <li className={styles.deaths}>
+              <span className={styles.statsName}>Deaths</span>
+              <Counter from={0} to={totalCovidData.deaths} />
+            </li>
+          </MovingComponent>
+          <MovingComponent initial={{ opacity: 0 }}>
+            <li className={styles.recovered}>
+              <span className={styles.statsName}>Recovered</span>
+              <Counter from={0} to={totalCovidData.recovered} />
+            </li>
+          </MovingComponent>
         </ul>
       </div>
     </div>

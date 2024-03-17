@@ -2,18 +2,24 @@ import React from 'react';
 import styles from "./header.module.scss";
 import Logo from './logo/logo.component';
 import Navbar from './navbar/navbar.component';
+import MovingComponent from '../moving-component/moving-component.component';
 
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.logoWrapper}>
-        <Logo />
-      </div>
+      <MovingComponent initial={{ opacity: 0 }}>
+        <div className={styles.logoWrapper}>
+          <Logo />
+        </div>
+      </MovingComponent>
+
       <div className={styles.navbarWrapper}>
-        <Navbar />
+        <MovingComponent initial={{ opacity: 0 }}>
+          <Navbar />
+        </MovingComponent>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -11,14 +11,15 @@ function Custom404() {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
+        color: "#fff"
       }}
     >
-      <h1>We couldn&apos;t find the movie you looking for!</h1>
+      <h1>We couldn&apos;t find <u>the page</u> you're looking for!</h1>
       <Link
         href="/"
-        style={{ textDecoration: "underline", fontSize: 20, marginTop: 8 }}
+        style={{ borderBottom: "1px solid", fontSize: 20, marginTop: 8 }}
       >
-        Go home
+        Go Home Page
       </Link>
     </div>
   );

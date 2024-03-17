@@ -32,14 +32,13 @@
     width: 100%;
     .statsItems {
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       @media (max-width: 576px) {
-        flex-direction: column;
-        gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
       }
-      .statsItem {
+      li {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -51,24 +50,24 @@
             font-weight: bold;
           }
         }
-        &:nth-child(1) {
+        &.cases {
+          span {
+            &:last-child {
+              color: #ffffff;
+            }
+          }
+        }
+        &.deaths {
+          span {
+            &:last-child {
+              color: #7a1d20;
+            }
+          }
+        }
+        &.recovered {
           span {
             &:last-child {
               color: #005a82;
-            }
-          }
-        }
-        &:nth-child(2) {
-          span {
-            &:last-child {
-              color: #b72f34;
-            }
-          }
-        }
-        &:nth-child(3) {
-          span {
-            &:last-child {
-              color: #139300;
             }
           }
         }
