@@ -7,12 +7,24 @@ function CountryDetailLoading() {
 
   return (
     <div className={styles.countryDetailLoadingContainer}>
-      <div className={styles.flagLoadingContainer}>
+      <div className={styles.titleContainer}>
+        <Skeleton />
         <Skeleton />
       </div>
-      <div className={styles.informationContainer}>
-        <ul>
-          <li></li>
+      <div className={styles.mapContainer}>
+        <Skeleton />
+      </div>
+      <div className={styles.countryInformationContainer}>
+        <div className={styles.countryFlag}>
+          <Skeleton />
+        </div>
+        <ul className={styles.countryInformation}>
+          <li><Skeleton /></li>
+          <li><Skeleton /></li>
+          <li><Skeleton /></li>
+          <li><Skeleton /></li>
+          <li><Skeleton /></li>
+          <li><Skeleton /></li>
         </ul>
       </div>
     </div>

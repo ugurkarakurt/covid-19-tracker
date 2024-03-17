@@ -27,6 +27,8 @@ const DetailContainer: React.FC<{ country: string }> = ({ country }) => {
 
   return (
     <>
+      <CountryDetailLoading />
+      {/* 
       {!countryCovidData ? (
         <CountryDetailLoading />
       ) : (
@@ -56,7 +58,7 @@ const DetailContainer: React.FC<{ country: string }> = ({ country }) => {
             </ul>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };
