@@ -15,34 +15,3 @@ export const getColorByCases = (cases) => {
     return '#F5F4F6';
   }
 }
-
-export const transformCountryData = (item) => {
-  switch (item.country) {
-    case "USA":
-      return { ...item, country: "United States of America" };
-    case "UK":
-      return { ...item, country: "United Kingdom" };
-    case "S. Korea":
-      return { ...item, country: "South Korea" };
-    case "N. Korea":
-      return { ...item, country: "North Korea" };
-    case "Syrian Arab Republic":
-      return { ...item, country: "Syria" };
-    case "Libyan Arab Jamahiriya":
-      return { ...item, country: "Libya" };
-    case "Lao People's Democratic Republic":
-      return { ...item, country: "Laos" };
-    case "Bosnia":
-      return { ...item, country: "Bosnia and Herz." };
-    case "Congo":
-      return { ...item, country: "Dem. Rep. Congo" };
-    case "Central African Republic":
-      return { ...item, country: "Central African Rep." };
-    case "South Sudan":
-      return { ...item, country: "S. Sudan" };
-    case "Dominican Republic":
-      return { ...item, country: "Dominican Rep." };
-    default:
-      return item;
-  }
-}

@@ -2,12 +2,10 @@ import ListContainer from '@/containers/list/list.container';
 import React from 'react';
 
 
-function WorldMapPage() {
+function ListPage() {
   return (
-    <div>
-      <ListContainer />
-    </div>
+    <ListContainer />
   )
 }
 
-export default WorldMapPage;
+export default ListPage;

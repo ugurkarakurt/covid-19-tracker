@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { TotalData } from '@/types';
+import { TotalData } from '@/types/types';
 
-const initialState = {
+export const initialState: TotalData = {
   updated: 0,
   cases: 0,
   todayCases: 0,

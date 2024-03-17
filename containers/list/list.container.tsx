@@ -1,8 +1,8 @@
 "use client"
 import React, { useEffect } from 'react';
-import styles from "./home-container.module.scss";
+import styles from "./list-container.module.scss";
 import { useDispatch } from 'react-redux';
-import MapChart from '@/comnponents/map-chart/mapChart.components';
+import MapChart from '@/components/map-chart/mapChart.components';
 
 function ListContainer() {
   const dispatch = useDispatch();
@@ -12,7 +12,9 @@ function ListContainer() {
   }, []);
 
   return (
-    <MapChart />
+    <div className={styles.listContainer}>
+      <MapChart />
+    </div>
   )
 }
 

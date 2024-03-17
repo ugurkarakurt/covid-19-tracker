@@ -55,7 +55,7 @@
           ],
           "id": "732",
           "properties": {
-            "name": "W. Sahara"
+            "name": "Western Sahara"
           }
         },
         {
@@ -280,7 +280,7 @@
           ],
           "id": "840",
           "properties": {
-            "name": "United States of America"
+            "name": "USA"
           }
         },
         {
@@ -490,7 +490,7 @@
           ],
           "id": "180",
           "properties": {
-            "name": "Dem. Rep. Congo"
+            "name": "Congo"
           }
         },
         {
@@ -583,7 +583,7 @@
           ],
           "id": "214",
           "properties": {
-            "name": "Dominican Rep."
+            "name": "Dominican Republic"
           }
         },
         {
@@ -707,7 +707,7 @@
           ],
           "id": "238",
           "properties": {
-            "name": "Falkland Is."
+            "name": "Falkland Islands (Malvinas)"
           }
         },
         {
@@ -1455,7 +1455,7 @@
           ],
           "id": "140",
           "properties": {
-            "name": "Central African Rep."
+            "name": "Central African Republic"
           }
         },
         {
@@ -1501,7 +1501,7 @@
           ],
           "id": "226",
           "properties": {
-            "name": "Eq. Guinea"
+            "name": "Equatorial Guinea"
           }
         },
         {
@@ -1741,7 +1741,7 @@
           ],
           "id": "784",
           "properties": {
-            "name": "United Arab Emirates"
+            "name": "UAE"
           }
         },
         {
@@ -1933,7 +1933,7 @@
           ],
           "id": "408",
           "properties": {
-            "name": "North Korea"
+            "name": "N. Korea"
           }
         },
         {
@@ -1946,7 +1946,7 @@
           ],
           "id": "410",
           "properties": {
-            "name": "South Korea"
+            "name": "S. Korea"
           }
         },
         {
@@ -2136,7 +2136,7 @@
           ],
           "id": "760",
           "properties": {
-            "name": "Syria"
+            "name": "Syrian Arab Republic"
           }
         },
         {
@@ -2603,7 +2603,7 @@
           ],
           "id": "090",
           "properties": {
-            "name": "Solomon Is."
+            "name": "Solomon Islands"
           }
         },
         {
@@ -2769,7 +2769,7 @@
           ],
           "id": "826",
           "properties": {
-            "name": "United Kingdom"
+            "name": "UK"
           }
         },
         {
@@ -3173,7 +3173,7 @@
           ],
           "id": "434",
           "properties": {
-            "name": "Libya"
+            "name": "Libyan Arab Jamahiriya"
           }
         },
         {
@@ -3265,7 +3265,7 @@
           ],
           "id": "070",
           "properties": {
-            "name": "Bosnia and Herz."
+            "name": "Bosnia"
           }
         },
         {
@@ -3360,7 +3360,7 @@
           ],
           "id": "728",
           "properties": {
-            "name": "S. Sudan"
+            "name": "South Sudan"
           }
         }
       ]

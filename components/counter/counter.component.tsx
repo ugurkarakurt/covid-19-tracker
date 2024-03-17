@@ -1,10 +1,6 @@
+import { CounterProps } from "@/types/types";
 import { animate, AnimationControls } from "framer-motion";
 import React, { useEffect, useRef } from "react";
-
-interface CounterProps {
-  from: number;
-  to: number;
-}
 
 function Counter({ from, to }: CounterProps) {
   const nodeRef = useRef<HTMLParagraphElement>(null);

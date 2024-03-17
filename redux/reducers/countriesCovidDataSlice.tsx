@@ -1,7 +1,7 @@
-import { CountryData } from '@/types';
+import { CountryData } from '@/types/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const initialState = {};
+const initialState: { [country: string]: CountryData } = {};
 
 const dataSlice = createSlice({
   name: 'countriesCovidData',

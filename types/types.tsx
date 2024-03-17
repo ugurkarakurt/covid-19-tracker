@@ -6,11 +6,12 @@ export type CountryData = {
   continent: string;
   country: string;
   countryInfo: {
-    _id: number;
     iso2: string;
     iso3: string;
+    flag: string;
     lat: number;
     long: number;
+    _id: number;
   };
   critical: number;
   criticalPerOneMillion: number;
@@ -28,7 +29,10 @@ export type CountryData = {
   todayDeaths: number;
   todayRecovered: number;
   updated: number;
+  message?: string;
 };
+
+
 
 export type TotalData = {
   updated: number;
@@ -53,3 +57,35 @@ export type TotalData = {
   criticalPerOneMillion: number;
   affectedCountries: number;
 };
+
+export type CountryParameterData = {
+  type: string,
+  payload: string
+}
+
+export type PageTitleProps = {
+  title: string;
+  date: string;
+}
+
+export type CounterProps = {
+  from: number;
+  to: number;
+}
+
+export type DetailPageProps = {
+  params: {
+    country: string;
+  };
+  searchParams: string;
+}
+
+export type RootLayoutProps = {
+  children: React.ReactNode;
+}
+
+
+export type LeafletMapProps = {
+  coord: [number, number];
+  country: string,
+}

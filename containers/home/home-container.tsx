@@ -3,10 +3,11 @@ import React, { useEffect } from 'react';
 import styles from "./home-container.module.scss";
 import Image from 'next/image';
 import EarthImage from "@/public/earth_white.svg";
-import Counter from '@/comnponents/counter/counter.component';
+import Counter from '@/components/counter/counter.component';
 import { useDispatch, useSelector } from 'react-redux';
+import PageTitle from '@/components/page-title/page-title.component';
 import { RootState } from '@/redux/store';
-import { TotalData } from '@/types';
+import { TotalData } from '@/types/types';
 
 function HomeContainer() {
   const dispatch = useDispatch();
@@ -20,15 +21,13 @@ function HomeContainer() {
 
   return (
     <div className={styles.homeContainer}>
-      <div className={styles.homeTitle}>
-        <h2>Global Stats</h2>
-        <span>{lastUpdated.toLocaleString()}</span>
-      </div>
+      <PageTitle title={"Global Stats"} date={lastUpdated.toLocaleString()} />
+
       <Image
-        className={styles.earthImage}
+        className={styles.logo}
         src={EarthImage}
         unoptimized
-        priority
+        style={{ width: '100%', height: 'auto' }}
         alt='site_logo'
       />
       <div className={styles.stats}>
