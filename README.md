@@ -28,6 +28,7 @@ Pull the Docker Image `docker pull zeves/covid-19-tracker:latest`
 - Framer Motion was used for animations.
 - Functional coding was used throughout the project. In this context, the operations to be performed with auxiliary functions were written under the utils folder.
 - General and simple component rendering tests were written.
+- Cypress was used for tests.
 - Skeleton structure was used for Custom 404 pages and Loading.
 - Although it is not a responsive design, responsive feature has been added.
 
