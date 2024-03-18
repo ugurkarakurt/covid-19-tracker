@@ -14,7 +14,7 @@ const MapChart: React.FC = () => {
   const countriesCovidData: { [country: string]: CountryData } = useSelector((state: RootState) => state.countriesCovidData);
 
   return (
-    <div className={styles.mapContainer}>
+    <div className={styles.mapContainer} data-testid="map-container">
       <Tooltip style={{ backgroundColor: "#fff", color: "#000", fontWeight: "bold" }} id="country_name" place="top-end" />
       <ComposableMap projection="geoEqualEarth">
         <ZoomableGroup center={[0, 0]} zoom={1} width={100} height={100}>

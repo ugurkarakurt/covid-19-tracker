@@ -13,7 +13,7 @@ const LeafletMap: React.FC<LeafletMapProps> = ({ coord, country }) => {
   }, [coord]);
 
   return (
-    <MapContainer key={key} center={coord} zoom={5} className={styles.mapContainer}>
+    <MapContainer key={key} center={coord} zoom={5} className={styles.mapContainer} data-testid="map-container">
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?style=dark"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
