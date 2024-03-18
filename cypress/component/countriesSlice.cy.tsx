@@ -25,9 +25,18 @@ describe('countriesCovidData reducer', () => {
         recoveredPerOneMillion: 94000,
         criticalPerOneMillion: 1200,
         affectedCountries: 200,
+        continent: 'Europe',
+        country: 'Turkey',
+        countryInfo: {
+          iso2: 'TR',
+          iso3: 'TUR',
+          flag: 'https://www.example.com/flag.png',
+          lat: 38.9637,
+          long: 35.2433,
+          _id: 792,
+        },
       },
     };
-
     const action = setCountriesCovidData(countryData);
     expect(action.type).equal('countriesCovidData/setCountriesCovidData');
     expect(action.payload).equal(countryData);
