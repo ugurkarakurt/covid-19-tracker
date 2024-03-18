@@ -1,5 +1,5 @@
 import { CounterProps } from "@/types/types";
-import { animate, AnimationControls, AnimationPlaybackControls } from "framer-motion";
+import { animate, AnimationPlaybackControls } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 const Counter = ({ from, to }: CounterProps) => {
   const [count, setCount] = useState<number>(from || 0);

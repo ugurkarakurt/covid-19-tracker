@@ -1,5 +1,4 @@
 "use client"
-import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "@/styles/global.scss";
 import Header from "@/components/header/header.component";

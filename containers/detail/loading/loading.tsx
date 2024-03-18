@@ -2,7 +2,6 @@ import React from "react";
 import Skeleton from "@/components/skeleton/skeleton.component";
 import styles from "./loading.module.scss";
 
-
 const CountryDetailLoading: React.FC = () => {
   return (
     <div className={styles.countryDetailLoadingContainer}>

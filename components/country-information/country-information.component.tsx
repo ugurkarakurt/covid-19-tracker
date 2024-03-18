@@ -4,7 +4,6 @@ import styles from "./country-information.module.scss";
 import { CountryData } from '@/types/types';
 import { numberWithDot } from '@/utils/pseudo.utils';
 
-
 const CountryInformation: React.FC<{ countryCovidData: CountryData }> = ({ countryCovidData }) => {
   return (
     <>
