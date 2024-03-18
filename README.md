@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Kartaca Case Study
 
-## Getting Started
+![Project Logo](./public/screenshot-homepage.png)
 
-First, run the development server:
+## Covid-19 APP
+### This project allows you to select covid-19 cases from around the world and see them by country.
+
+<br>
+
+Visit Project via Vercel= [The Covid-19 Tracker](https://covid-19-tracker-delta-seven.vercel.app/)<br>
+
+Pull the Docker Image `docker pull zeves/covid-19-tracker:latest`
+
+<br>
+
+#### A project was created with Covid-19 data.
+
+- The project is coded in Next.js (14.1.3).
+- Typescript was used.
+- The project itself was also deployed on Vercel.
+- Docker deployment was also done. The necessary configuration was made to dockerize.
+- In the project, a dynamic structure was established by paying attention to React rendering and state management. Redux Toolkit was used to provide and manage this structure.
+- Axios was used for fetch requests.
+- Redux-saga was used for middleware.
+- The world map World Atlas TopoJSON was used and the map was dynamically generated with react-simple-maps.
+- React Leaflet was used for the detail page.
+- Sass was used for the css part.
+- Framer Motion was used for animations.
+- Functional coding was used throughout the project. In this context, the operations to be performed with auxiliary functions were written under the utils folder.
+- General and simple component rendering tests were written.
+- Skeleton structure was used for Custom 404 pages and Loading.
+- Although it is not a responsive design, responsive feature has been added.
+
+
+<br>
+
+## Dependencies
+
+- React.js
+- Next.js
+- Styled Reset (Sass)
+- Axios
+- Framer Motion
+- React Leaflet
+- React Simple Map
+- Redux Tooltip
+- Redux
+- Redux Saga
+- Sass
+
+<br>
+
+## Installation
 
 ```bash
+npm install
+npm run build
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ScreenShots
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Some in-app images
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Image 1                               | Image 2                               |
+| ------------------------------------- | ------------------------------------- |
+| ![ListPage](./public/screenshot-listpage.png) | ![Add Page](./public/screenshot-detailpage.png) |
+| List Page                              | Filtered Homepage                     |

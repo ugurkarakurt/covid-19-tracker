@@ -1,19 +1,15 @@
-# Base image
-FROM node:14
+FROM node:18-alpine
 
-# Set working directory
+RUN apk add --no-cache libc6-compat
+
 WORKDIR /app
 
-# Install dependencies
-COPY package.json .
-COPY package-lock.json .
-RUN npm install
-
-# Copy project files
 COPY . .
 
-# Expose port
+RUN npm install
+
+RUN npm run build
+
 EXPOSE 3000
 
-# Command to run the application
 CMD ["npm", "start"]
